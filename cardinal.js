@@ -9,7 +9,11 @@ function isFunction (obj) {
 }
 
 function highlight (code, theme_) {
-  return redeyed(code, theme_ || theme);
+  try {
+    return redeyed(code, theme_ || theme);
+  } catch (e) {
+    throw new Error('Unable to perform highlight. The code contained syntax errors: ' + e.message);
+  }
 }
 
 function highlightFile (fullPath, theme_, cb) {
