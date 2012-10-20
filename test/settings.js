@@ -24,7 +24,7 @@ function resolveTheme (config) {
   return result;
 }
 
-if (!fs.exists(home)) fs.mkdir(home);
+if (!fs.existsSync(home)) fs.mkdirSync(home);
 
 test('no .cardinalrc in home', function (t) {
   var theme = settings.resolveTheme(home)
