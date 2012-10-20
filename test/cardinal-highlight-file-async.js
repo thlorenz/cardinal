@@ -39,3 +39,10 @@ test('errornous code', function (t) {
     t.end()
   })
 })
+
+test('non existing file', function (t) {
+  cardinal.highlightFile('./not/existing', function (err, highlighted) {
+    t.similar(err.message, /ENOENT, .*not.existing/)
+    t.end()
+  })
+})

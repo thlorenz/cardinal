@@ -37,3 +37,12 @@ test('errornous code', function (t) {
     t.end()
   }
 })
+
+test('non existing file', function (t) {
+  try {
+    cardinal.highlightFileSync('./not/existing');
+  } catch (e) {
+    t.similar(e.message, /ENOENT, .*not.existing/)
+    t.end()
+  }
+})
