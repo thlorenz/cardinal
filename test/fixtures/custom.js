@@ -34,7 +34,9 @@ Object.keys(colorNums).forEach(function (k) {
 module.exports = {
 
     'Boolean': {
-      'true'   :  undefined
+      // changed from default
+      'true'   :  colors.red
+
     , 'false'  :  undefined
     , _default :  colors.brightRed
     }
@@ -46,7 +48,9 @@ module.exports = {
     , 'log'       :  colors.blue
     , 'warn'      :  colors.red
     , 'error'     :  colors.brightRed
-    , _default    :  colors.white
+    //
+      // changed from default
+    , _default    :  colors.brightCyan
     }
 
   , 'Null': {
@@ -100,7 +104,7 @@ module.exports = {
     , _default      :  colors.brightBlue
   }
   , 'Punctuator': {
-      ';': colors.black
+      ';': colors.brightBlack
     , '.': colors.green  
     , ',': colors.green  
 

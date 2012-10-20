@@ -14,7 +14,6 @@ var colorNums = {
     , magenta       :  35
     , red           :  31
     , yellow        :  33
-    , grey          :  90
     , brightBlack   :  90
     , brightRed     :  91
     , brightGreen   :  92
