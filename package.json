@@ -1,0 +1,24 @@
+{
+  "name": "cardinal",
+  "version": "0.0.0",
+  "description": "Syntax highlights JavaScript code with ANSI colors to be printed to the terminal.",
+  "main": "cardinal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/cardinal.git"
+  },
+  "keywords": [
+    "syntax",
+    "highlight",
+    "javascript",
+    "terminal",
+    "console",
+    "print",
+    "output"
+  ],
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+  "license": "MIT"
+}
