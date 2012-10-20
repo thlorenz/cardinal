@@ -5,6 +5,7 @@ var test     =  require('tap').test
   , path     =  require('path')
   , fs       =  require('fs')
   , settings =  require('../settings')
+  , existsSync = fs.existsSync || path.existsSync
   , hideSemicolonsTheme =  require('../themes/hide-semicolons')
   , home                =  path.join(__dirname, 'fixtures', 'home')
   , rcpath              =  path.join(home, '.cardinalrc')
@@ -24,7 +25,7 @@ function resolveTheme (config) {
   return result;
 }
 
-if (!fs.existsSync(home)) fs.mkdirSync(home);
+if (!existsSync(home)) fs.mkdirSync(home);
 
 test('no .cardinalrc in home', function (t) {
   var theme = settings.resolveTheme(home)
