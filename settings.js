@@ -28,7 +28,7 @@ function resolveTheme (home_) {
 
     if (!settings.theme) return undefined;
     
-    // allow specifying just the name of a build in theme or a full path to a custom theme
+    // allow specifying just the name of a built-in theme or a full path to a custom theme
     themePath = isPath(settings.theme) ? settings.theme : path.join(__dirname, 'themes', settings.theme);
 
     return require(themePath);
