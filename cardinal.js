@@ -12,7 +12,8 @@ function highlight (code, theme_) {
   try {
     return redeyed(code, theme_ || theme);
   } catch (e) {
-    throw new Error('Unable to perform highlight. The code contained syntax errors: ' + e.message);
+    e.message = 'Unable to perform highlight. The code contained syntax errors: ' + e.message;
+    throw e;
   }
 }
 

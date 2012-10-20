@@ -6,6 +6,9 @@
   "scripts": {
     "test": "tap ./test/*.js"
   },
+  "bin": {
+    "cardinal": "./bin/cardinal"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/cardinal.git"
