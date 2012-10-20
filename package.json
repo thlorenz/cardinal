@@ -20,5 +20,11 @@
     "output"
   ],
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "redeyed": "~0.1.0"
+  },
+  "devDependencies": {
+    "tap": "~0.3.1"
+  }
 }
