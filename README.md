@@ -105,7 +105,7 @@ full path to a custom theme anywhere on your computer.
 - `theme` ({Object}) can be used optionally override the theme used to highlight
 - `callback` ({Function}) has the following signature: `function (err, highlighted) { .. }`
 
-## Examples [browse](https://github.com/thlorenz/cardinal/tree/master/examples)
+## Examples ([*browse*](https://github.com/thlorenz/cardinal/tree/master/examples))
 
 - [sample .cardinalrc](https://github.com/thlorenz/cardinal/blob/master/examples/.cardinalrc)
 - [highlighting a code snippet](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-string.js) via
