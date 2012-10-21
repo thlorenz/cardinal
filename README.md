@@ -22,8 +22,8 @@ highlight();
 
 - highlights JavaScript code with ANSI colors to improve terminal output
 - theming support, see [custom color themes](https://github.com/thlorenz/cardinal/tree/master/themes)
-- API and the command line interface
-- `.cardinalrc` config
+- API and command line interface
+- `.cardinalrc` config to customize settings
 - supports UNIX pipes
 
 ***
@@ -65,7 +65,7 @@ highlight();
 
 **Note:**
 
-Not all code snippets may be parsable JavaScript. In these cases the snippet is printed to the terminal without
+Not all code lines may be parsable JavaScript. In these cases the line is printed to the terminal without
 highlighting it.
 
 ### Theme
@@ -105,9 +105,7 @@ full path to a custom theme anywhere on your computer.
 - `theme` ({Object}) can be used optionally override the theme used to highlight
 - `callback` ({Function}) has the following signature: `function (err, highlighted) { .. }`
 
-## Examples
-
-[browse](https://github.com/thlorenz/cardinal/tree/master/examples)
+## Examples [browse](https://github.com/thlorenz/cardinal/tree/master/examples)
 
 - [sample .cardinalrc](https://github.com/thlorenz/cardinal/blob/master/examples/.cardinalrc)
 - [highlighting a code snippet](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-string.js) via
