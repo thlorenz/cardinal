@@ -3,12 +3,13 @@ var cardinal = require('..')
   , utl = require('../utl')
   , settings = require('../settings')
   , args = process.argv
+  , theme = settings.resolveTheme()
   , highlighted
   ;
 
 function highlightFile () {
   try {
-    highlighted = cardinal.highlightFileSync(args[2]);
+    highlighted = cardinal.highlightFileSync(args[2], theme);
     console.log(highlighted);
   } catch (e) {
     console.trace();
@@ -30,7 +31,7 @@ stdin
     buf.push(chunk);
   })
   .on('end', function () {
-    highlighted = cardinal.highlight(buf.join(''));
+    highlighted = cardinal.highlight(buf.join(''), theme);
     console.log(highlighted);
   });
 
