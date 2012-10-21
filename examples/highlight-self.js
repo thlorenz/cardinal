@@ -8,6 +8,7 @@ function highlight () {
   // For synchronous highlighting use: highlightFileSync() - see highlight-self-hide-semicolons.js
   
   cardinal.highlightFile(__filename, function (err, res) {
+    if (err) return console.error(err);
     console.log(res);
   });
 }
