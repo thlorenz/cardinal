@@ -90,19 +90,19 @@ full path to a custom theme anywhere on your computer.
 ### *highlight(code[, theme])*
 
 - returns the highlighted version of the passed code ({String}) or throws an error if it was not able to parse it
-- `theme` ({Object}) can be used optionally override the theme used to highlight
+- `theme` ({Object}) is used to optionally override the theme used to highlight
 
 ### *highlightFileSync(fullPath[, theme])*
 
 - returns the highlighted version of the file whose fullPath ({String}) was passed or throws an error if it was not able
   to parse it
-- `theme` ({Object}) can be used optionally override the theme used to highlight
+- `theme` ({Object}) is used to optionally override the theme used to highlight
 
 ### *highlightFile(fullPath[, theme], callback)*
 
 - calls back with the highlighted version of the file whose fullPath ({String}) was passed or with an error if it was not able
   to parse it
-- `theme` ({Object}) can be used optionally override the theme used to highlight
+- `theme` ({Object}) is used to optionally override the theme used to highlight
 - `callback` ({Function}) has the following signature: `function (err, highlighted) { .. }`
 
 ## Examples ([*browse*](https://github.com/thlorenz/cardinal/tree/master/examples))
