@@ -41,7 +41,7 @@ highlight();
   - [highlight(code[, theme])](#highlightcode-theme)
   - [highlightFileSync(fullPath[, theme])](#highlightfilesyncfullpath-theme)
   - [highlightFile(fullPath[, theme], callback)](#highlightfilefullpath-theme-callback)
-- [Examples](#examples)
+- [Examples](#examples-browse)
 
 ## Installation
 
