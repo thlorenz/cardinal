@@ -1,7 +1,6 @@
 # cardinal [![Build Status](https://secure.travis-ci.org/thlorenz/cardinal.png)](http://travis-ci.org/thlorenz/cardinal)
 
-**car·di·nal** *(kärdn-l, kärdnl)* - A North American finch (Cardinalis cardinalis) having a crested head, a short thick
-bill, and bright red plumage
+**car·di·nal** *(kärdn-l, kärdnl)* - crested thick-billed North American finch having bright red plumage in the male
 
 ```javascript
 var cardinal = require('cardinal');
