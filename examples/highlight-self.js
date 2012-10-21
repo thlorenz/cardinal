@@ -1,4 +1,4 @@
-// This file will highlight itself using the custom theme when run via: "node highlight-self"
+// This file will highlight itself using the default theme when run via: "node highlight-self"
 
 var cardinal = require('..');
 

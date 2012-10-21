@@ -67,7 +67,7 @@ This is a JSON file of the following form:
 }
 ```
 
-`theme` can be the name of any of the [build in themes](https://github.com/thlorenz/cardinal/tree/master/themes) or the
+`theme` can be the name of any of the [built-in themes](https://github.com/thlorenz/cardinal/tree/master/themes) or the
 full path to a custom theme anywhere on your computer.
 
 ## API
@@ -89,3 +89,18 @@ full path to a custom theme anywhere on your computer.
   to parse it
 - `theme` ({Object}) can be used optionally override the theme used to highlight
 - `callback` ({Function}) has the following signature: `function (err, highlighted) { .. }`
+
+## Examples
+
+[browse](https://github.com/thlorenz/cardinal/tree/master/examples)
+
+- [sample .cardinalrc](https://github.com/thlorenz/cardinal/blob/master/examples/.cardinalrc)
+- [highlighting a code snippet](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-string.js) via
+  ***highlight()***
+- [file that highlights itself](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-self.js) via
+  ***highlightFile()***
+- [file that highlights itself hiding all
+  semicolons](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-self-hide-semicolons.js) via
+  ***highlightFileSync()***
+
+

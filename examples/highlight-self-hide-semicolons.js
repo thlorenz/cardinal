@@ -1,6 +1,6 @@
  /*
-  * This file will highlight itself using the custom theme when run via: "node highlight-self-hide-semicolons"
-  * It is using a custom theme that highlights semicolons as 'black', therfore hiding them
+  * This file will highlight itself using a custom theme when run via: "node highlight-self-hide-semicolons"
+  * The custom theme highlights semicolons as 'black', thus hiding them.
   */
 
 var cardinal = require('..')

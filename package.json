@@ -4,7 +4,8 @@
   "description": "Syntax highlights JavaScript code with ANSI colors to be printed to the terminal.",
   "main": "cardinal.js",
   "scripts": {
-    "test": "tap ./test/*.js"
+    "test": "tap ./test/*.js",
+    "demo": "node examples/highlight-string.js; node examples/highlight-self; node examples/highlight-self-hide-semicolons;"
   },
   "bin": {
     "cardinal": "./bin/cardinal.js"
