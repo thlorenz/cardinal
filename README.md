@@ -48,6 +48,11 @@ Syntax highlights your code with ANSI colors to be printed to the terminal.
 
     `cat file.js | grep console | cardinal`
 
+**Note:**
+
+Not all code snippets may be parsable JavaScript. In these cases the snippet is printed to the terminal without
+highlighting it.
+
 ### Theme
 
 The default theme will be used for highlighting.
@@ -63,12 +68,7 @@ This is a JSON file of the following form:
 ```
 
 `theme` can be the name of any of the [build in themes](https://github.com/thlorenz/cardinal/tree/master/themes) or the
-full path to a custom theme anywher on your computer.
-
-**Note:**
-
-Not all code snippets may be parsable JavaScript. In these cases the snippet is printed to the terminal without
-highlighting it.
+full path to a custom theme anywhere on your computer.
 
 ## API
 
