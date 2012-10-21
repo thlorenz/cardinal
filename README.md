@@ -26,6 +26,8 @@ highlight();
 - `.cardinalrc` config
 - supports UNIX pipes
 
+***
+
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Installation](#installation)
