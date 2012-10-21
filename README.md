@@ -2,4 +2,22 @@
 
 Syntax highlights your code with ANSI colors to be printed to the terminal.
 
-![cardinal](http://www.decodedstuff.com/wp-content/uploads/2010/06/northern-cardinal.jpg)
+**example.js:**
+
+```javascript
+var cardinal = require('cardinal');
+
+function highlight () {
+  cardinal.highlightFile(__filename, function (err, res) {
+    if (err) return console.error(err);
+    console.log(res);
+  });
+}
+
+highlight();
+```
+
+**Output:**
+
+![screenshot](https://github.com/thlorenz/cardinal/raw/master/assets/screen-shot.png)
+
