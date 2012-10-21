@@ -3,8 +3,6 @@
 **car·di·nal** *(kärdn-l, kärdnl)* - A North American finch (Cardinalis cardinalis) having a crested head, a short thick
 bill, and bright red plumage
 
-**example.js:**
-
 ```javascript
 var cardinal = require('cardinal');
 
@@ -17,6 +15,7 @@ function highlight () {
 
 highlight();
 ```
+
 ![screenshot](https://github.com/thlorenz/cardinal/raw/master/assets/screen-shot.png)
 
 Syntax highlights your code with ANSI colors to be printed to the terminal.
@@ -46,7 +45,7 @@ Syntax highlights your code with ANSI colors to be printed to the terminal.
 
 ### As part of a UNIX pipe
 
-    `cat file.js | grep console | cardinal`
+    cat file.js | grep console | cardinal
 
 **Note:**
 
