@@ -18,14 +18,28 @@ highlight();
 
 ![screenshot](https://github.com/thlorenz/cardinal/raw/master/assets/screen-shot.png)
 
-Syntax highlights your code with ANSI colors to be printed to the terminal.
-
 ## Features
 
-- custom color [themes](https://github.com/thlorenz/cardinal/tree/master/themes)
-- use it as a library or from the command line
+- highlights JavaScript code with ANSI colors to improve terminal output
+- theming support, see [custom color themes](https://github.com/thlorenz/cardinal/tree/master/themes)
+- API and the command line interface
 - `.cardinalrc` config
 - supports UNIX pipes
+
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Installation](#installation)
+  - [As library](#as-library)
+  - [As Commandline Tool](#as-commandline-tool)
+- [Commandline](#commandline)
+  - [Highlight a file](#highlight-a-file)
+  - [As part of a UNIX pipe](#as-part-of-a-unix-pipe)
+  - [Theme](#theme)
+- [API](#api)
+  - [highlight(code[, theme])](#highlightcode-theme)
+  - [highlightFileSync(fullPath[, theme])](#highlightfilesyncfullpath-theme)
+  - [highlightFile(fullPath[, theme], callback)](#highlightfilefullpath-theme-callback)
+- [Examples](#examples)
 
 ## Installation
 
