@@ -5,6 +5,11 @@ These are the built in themes that come with cardinal.
 You can create more themes by copying and then editing the [empty
 theme](https://github.com/thlorenz/cardinal/blob/master/themes/empty.js) which is provided for that purpose.
 
+The [hide semicolons theme](https://github.com/thlorenz/cardinal/blob/master/themes/hide-semicolons.js) has the added
+benefit of making all semicolons invisible. This makes code more readable at times.
+
+Find out how to change the theme used by cardinal [here](https://github.com/thlorenz/cardinal#theme).
+
 # sharing themes
 
 To add your theme to the cardinal built-in themes, follow the below steps:
