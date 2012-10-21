@@ -22,16 +22,19 @@ if (args.length === 3) return highlightFile();
 
 // UNIX pipes e.g., "cat myfile.js | grep console | cardinal
 var stdin = process.stdin
-  , buf = [];
+  , stdout = process.stdout;
 
 stdin.resume();
 stdin.setEncoding('utf-8');
 stdin
   .on('data', function (chunk) {
-    buf.push(chunk);
-  })
-  .on('end', function () {
-    highlighted = cardinal.highlight(buf.join(''), theme);
-    console.log(highlighted);
+    chunk.split('\n').forEach(function (line) {
+      try {
+        stdout.write(cardinal.highlight(line, theme) + '\n');
+      } catch (e) {
+        // line doesn't represent a valid js snippet and therefore cannot be parsed -> just print as is
+        stdout.write(line + '\n');
+      }
+    });
   });
 

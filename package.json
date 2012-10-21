@@ -7,7 +7,7 @@
     "test": "tap ./test/*.js"
   },
   "bin": {
-    "cardinal": "./bin/cardinal"
+    "cardinal": "./bin/cardinal.js"
   },
   "repository": {
     "type": "git",
