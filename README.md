@@ -22,7 +22,7 @@ highlight();
 
 - highlights JavaScript code with ANSI colors to improve terminal output
 - theming support, see [custom color themes](https://github.com/thlorenz/cardinal/tree/master/themes)
-- API and command line interface
+- API and command line interface (`cdl`)
 - `.cardinalrc` config to customize settings
 - supports UNIX pipes
 
@@ -53,15 +53,19 @@ highlight();
 
     [sudo] npm install -g cardinal
 
+**Note:** 
+
+When installed globally, cardinal exposes itself as the `cdl` command.
+
 ## Commandline
 
 ### Highlight a file
 
-    cardinal file.js
+    cdl file.js
 
 ### As part of a UNIX pipe
 
-    cat file.js | grep console | cardinal
+    cat file.js | grep console | cdl
 
 **Note:**
 
