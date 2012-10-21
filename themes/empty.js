@@ -1,3 +1,9 @@
+/* 
+ * Copy this file and use it as a starting point for your custom cardinal color theme.
+ * Just fill in or change the entries for the tokens you want to color
+ * Keep in mind that more specific configurations override less specific ones.
+ */
+
 // Don't touch this definition
 var colorNums = {
       white         :  37
@@ -30,46 +36,40 @@ module.exports = {
     'Boolean': {
       'true'   :  undefined
     , 'false'  :  undefined
-    , _default :  colors.brightRed
+    , _default :  undefined
     }
 
   , 'Identifier': {
-      'undefined' :  colors.brightBlack
-    , 'self'      :  colors.brightRed
-    , 'console'   :  colors.blue
-    , 'log'       :  colors.blue
-    , 'warn'      :  colors.red
-    , 'error'     :  colors.brightRed
-    , _default    :  colors.white
+      _default: undefined
     }
 
   , 'Null': {
-      _default: colors.brightBlack
+      _default: undefined
     }
 
   , 'Numeric': {
-      _default: colors.blue
+      _default: undefined
     }
 
   , 'String': {
-      _default: colors.brightGreen
+      _default: undefined
     }
 
   , 'Keyword': {
       'break'       :  undefined
 
     , 'case'        :  undefined
-    , 'catch'       :  colors.cyan
+    , 'catch'       :  undefined
     , 'continue'    :  undefined
 
     , 'debugger'    :  undefined
     , 'default'     :  undefined
-    , 'delete'      :  colors.red
+    , 'delete'      :  undefined
     , 'do'          :  undefined
 
     , 'else'        :  undefined
 
-    , 'finally'     :  colors.cyan
+    , 'finally'     :  undefined
     , 'for'         :  undefined
     , 'function'    :  undefined
 
@@ -77,35 +77,33 @@ module.exports = {
     , 'in'          :  undefined
     , 'instanceof'  :  undefined
 
-    , 'new'         :  colors.red
-    , 'return'      :  colors.red
+    , 'new'         :  undefined
+    , 'return'      :  undefined
     , 'switch'      :  undefined
 
-    , 'this'        :  colors.brightRed
+    , 'this'        :  undefined
     , 'throw'       :  undefined
-    , 'try'         :  colors.cyan
+    , 'try'         :  undefined
     , 'typeof'      :  undefined
 
-    , 'var'         :  colors.green
+    , 'var'         :  undefined
     , 'void'        :  undefined
 
     , 'while'       :  undefined
     , 'with'        :  undefined
-    , _default      :  colors.brightBlue
+    , _default      :  undefined
   }
   , 'Punctuator': {
-      // setting semicolon's color to the same as the terminal background makes it invisible
-      ';': colors.black
+      ';': undefined  
+    , '.': undefined  
+    , ',': undefined  
 
-    , '.': colors.green  
-    , ',': colors.green  
-
-    , '{': colors.yellow
-    , '}': colors.yellow
-    , '(': colors.brightBlack  
-    , ')': colors.brightBlack  
-    , '[': colors.yellow
-    , ']': colors.yellow
+    , '{': undefined  
+    , '}': undefined  
+    , '(': undefined  
+    , ')': undefined  
+    , '[': undefined
+    , ']': undefined
 
     , '<': undefined
     , '>': undefined
@@ -149,7 +147,7 @@ module.exports = {
     
     , '>>>=': undefined
 
-    , _default: colors.brightYellow
+    , _default: undefined
   }
 
   , _default: undefined

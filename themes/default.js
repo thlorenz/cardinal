@@ -1,9 +1,3 @@
-/* 
- * Copy this file and use it as a starting point for your custom cardinal color theme.
- * Just fill in or change the entries for the tokens you want to color
- * Keep in mind that more specific configurations override less specific ones.
- */
-
 // Don't touch this definition
 var colorNums = {
       white         :  37
