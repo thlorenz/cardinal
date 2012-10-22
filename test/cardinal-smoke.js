@@ -9,7 +9,7 @@ var test     =  require('tap').test
   , cardinal  =  require('..')
   , node_modules =  path.join(__dirname, '..', 'node_modules')
   , tapdir       =  path.join(node_modules, 'tap')
-  , esprimadir   =  path.join(node_modules, 'redeyed', 'node_modules', 'esprima')
+  , redeyeddir   =  path.join(node_modules, 'redeyed')
 
 
 test('tap', function (t) {
@@ -26,19 +26,19 @@ test('tap', function (t) {
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
         , result = cardinal.highlight(code);
 
-      t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var')), 'highlighted ' + entry.path)
+      t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var ')), 'highlighted ' + entry.path)
     })
     .on('end', t.end.bind(t))
 })
 
-test('esprima', function (t) {
-  readdirp({ root: esprimadir, fileFilter: '*.js' })
+test('redeyed', function (t) {
+  readdirp({ root: redeyeddir, fileFilter: 'redeyed.js' })
     .on('data', function (entry) {
       
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
         , result = cardinal.highlight(code);
 
-      t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var')), 'highlighted ' + entry.path)
+      t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var ')), 'highlighted ' + entry.path)
     })
     .on('end', t.end.bind(t))
 })
