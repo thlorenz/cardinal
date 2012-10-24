@@ -150,5 +150,15 @@ module.exports = {
     , _default: undefined
   }
 
+    // line comment
+  , Line: {
+     _default: undefined
+    }
+
+    /* block comment */
+  , Block: {
+     _default: undefined
+    }
+
   , _default: undefined
 };

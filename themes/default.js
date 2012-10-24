@@ -150,5 +150,15 @@ module.exports = {
     , _default: colors.brightYellow
   }
 
+    // line comment
+  , Line: {
+     _default: colors.brightBlack
+    }
+
+    /* block comment */
+  , Block: {
+     _default: colors.brightBlack
+    }
+
   , _default: undefined
 };
