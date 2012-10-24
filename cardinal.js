@@ -10,7 +10,7 @@ function isFunction (obj) {
 
 function highlight (code, theme_) {
   try {
-    return redeyed(code, theme_ || theme);
+    return redeyed(code, theme_ || theme).code;
   } catch (e) {
     e.message = 'Unable to perform highlight. The code contained syntax errors: ' + e.message;
     throw e;
