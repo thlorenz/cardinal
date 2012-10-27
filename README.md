@@ -1,19 +1,6 @@
 # cardinal [![Build Status](https://secure.travis-ci.org/thlorenz/cardinal.png)](http://travis-ci.org/thlorenz/cardinal)
 
-**car·di·nal** *(kärdn-l, kärdnl)* - crested thick-billed North American finch having bright red plumage in the male
-
-```javascript
-var cardinal = require('cardinal');
-
-function highlight () {
-  cardinal.highlightFile(__filename, function (err, res) {
-    if (err) return console.error(err);
-    console.log(res);
-  });
-}
-
-highlight();
-```
+**car·di·nal** *(kärdn-l, kärdnl)* - crested thick-billed North American finch having bright red plumage in the male.
 
 ![screenshot](https://github.com/thlorenz/cardinal/raw/master/assets/screen-shot.png)
 
