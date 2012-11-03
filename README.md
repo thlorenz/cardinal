@@ -8,6 +8,7 @@
 
 - highlights JavaScript code with ANSI colors to improve terminal output
 - theming support, see [custom color themes](https://github.com/thlorenz/cardinal/tree/master/themes)
+- optionally print line numbers
 - API and command line interface (`cdl`)
 - `.cardinalrc` config to customize settings
 - supports UNIX pipes
