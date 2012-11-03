@@ -8,6 +8,7 @@ var cardinal = require('..')
   , highlighted
   ;
 
+opts = opts || {};
 opts.theme = theme;
 
 function usage() {
