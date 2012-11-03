@@ -9,7 +9,7 @@ var cardinal = require('..')
 
 function highlightFile () {
   try {
-    highlighted = cardinal.highlightFileSync(args[2], theme);
+    highlighted = cardinal.highlightFileSync(args[2], { theme: theme });
     console.log(highlighted);
   } catch (e) {
     console.trace();
