@@ -24,9 +24,9 @@
   - [As part of a UNIX pipe](#as-part-of-a-unix-pipe)
   - [Theme](#theme)
 - [API](#api)
-  - [highlight(code[, theme])](#highlightcode-theme)
-  - [highlightFileSync(fullPath[, theme])](#highlightfilesyncfullpath-theme)
-  - [highlightFile(fullPath[, theme], callback)](#highlightfilefullpath-theme-callback)
+  - [highlight(code[, opts])](#highlightcode-theme)
+  - [highlightFileSync(fullPath[, opts])](#highlightfilesyncfullpath-theme)
+  - [highlightFile(fullPath[, opts], callback)](#highlightfilefullpath-theme-callback)
 - [Examples](#examples-browse)
 
 ## Installation
@@ -47,7 +47,10 @@ When installed globally, cardinal exposes itself as the `cdl` command.
 
 ### Highlight a file
 
-    cdl file.js
+    cdl <file.js> [options]
+
+**options**:
+  - `--nonum`: turns off line number printing (relevant if it is turned on inside `~/.cardinalrc`
 
 ### As part of a UNIX pipe
 
@@ -68,32 +71,42 @@ This is a JSON file of the following form:
 
 ```json
 {
-  "theme": "hide-semicolons"
+  "theme": "hide-semicolons",
+  "linenos": true|false
 }
 ```
 
-`theme` can be the name of any of the [built-in themes](https://github.com/thlorenz/cardinal/tree/master/themes) or the
+- `theme` can be the name of any of the [built-in themes](https://github.com/thlorenz/cardinal/tree/master/themes) or the
 full path to a custom theme anywhere on your computer.
+- linenos toggles line number printing
 
 ## API
 
-### *highlight(code[, theme])*
+### *highlight(code[, opts])*
 
 - returns the highlighted version of the passed code ({String}) or throws an error if it was not able to parse it
-- `theme` ({Object}) is used to optionally override the theme used to highlight
+- opts (see below)
 
-### *highlightFileSync(fullPath[, theme])*
+### *highlightFileSync(fullPath[, opts])*
 
 - returns the highlighted version of the file whose fullPath ({String}) was passed or throws an error if it was not able
   to parse it
-- `theme` ({Object}) is used to optionally override the theme used to highlight
+- opts (see below)
 
-### *highlightFile(fullPath[, theme], callback)*
+### *highlightFile(fullPath[, opts], callback)*
 
 - calls back with the highlighted version of the file whose fullPath ({String}) was passed or with an error if it was not able
   to parse it
-- `theme` ({Object}) is used to optionally override the theme used to highlight
+- opts (see below)
 - `callback` ({Function}) has the following signature: `function (err, highlighted) { .. }`
+
+### opts
+
+opts is an {Object} with the following properties:
+
+- `theme` {Object} is used to optionally override the theme used to highlight
+- `linenos` {Boolean} if `true` line numbers are included in the highlighted code
+- `firstline` {Integer} sets line number of the first line when line numbers are printed
 
 ## Examples ([*browse*](https://github.com/thlorenz/cardinal/tree/master/examples))
 
@@ -101,7 +114,7 @@ full path to a custom theme anywhere on your computer.
 - [highlighting a code snippet](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-string.js) via
   ***highlight()***
 - [file that highlights itself](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-self.js) via
-  ***highlightFile()***
+  ***highlightFile()*** including line numbers
 - [file that highlights itself hiding all
   semicolons](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-self-hide-semicolons.js) via
   ***highlightFileSync()***
