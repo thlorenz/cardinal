@@ -24,10 +24,12 @@
   - [As part of a UNIX pipe](#as-part-of-a-unix-pipe)
   - [Theme](#theme)
 - [API](#api)
-  - [highlight(code[, opts])](#highlightcode-theme)
-  - [highlightFileSync(fullPath[, opts])](#highlightfilesyncfullpath-theme)
-  - [highlightFile(fullPath[, opts], callback)](#highlightfilefullpath-theme-callback)
-- [Examples](#examples-browse)
+  - [*highlight(code[, opts])*](#highlightcode[-opts])
+  - [*highlightFileSync(fullPath[, opts])*](#highlightfilesyncfullpath[-opts])
+  - [*highlightFile(fullPath[, opts], callback)*](#highlightfilefullpath[-opts]-callback)
+  - [opts](#opts)
+- [Examples ([*browse*](https://github.com/thlorenz/cardinal/tree/master/examples))](#examples-[browse]https://githubcom/thlorenz/cardinal/tree/master/examples)
+
 
 ## Installation
 
