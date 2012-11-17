@@ -12,6 +12,7 @@ var fs = require('fs')
 // @@ is not a valid js token, so when we see it, we can be sure that we are dealing with a git or svn diff
 var diffRegex = /^@@[^@]+@@$/m;
 var diffIndRegex = /^(@@[^@]+@@)(.*)$/;
+var addRemRegex = /^[+\-]/;
 var lines = diff.split('\n');
 
 function isDiff(lines) {
@@ -21,38 +22,69 @@ function isDiff(lines) {
     })
     .length;
 }
+
 var diff = isDiff(lines);
 function tryHighlight(code) {
-  try {
-    return highlight(code);
-  } catch (e) {
-    return code; 
+
+  function tryAppending(appended, tryNext) {
+    var success;
+    try {
+       success = highlight(code + appended);
+       return success;
+    } catch (e) {
+      return tryNext(code);
+    }
   }
+
+  function tryRemoveLeadingComma(tryNext) {
+    var success;
+    try {
+       success = highlight(code.replace(/^( +),(.+)$/, '$1 $2'));
+       return success;
+    } catch (e) {
+      return tryNext(code);
+    }
+  }
+
+  function tryPlain() { return tryAppending('', tryCloseMustache); }
+
+  function tryCloseMustache() { return tryAppending('}', tryCloseParen); }
+
+  function tryCloseParen() { return tryAppending(')', tryCloseMustacheParen); }
+
+  function tryCloseMustacheParen() { return tryAppending('})', tryRemovingCommas);}
+
+  function tryRemovingCommas() { return tryRemoveLeadingComma(giveUp); }
+
+  function giveUp() { return code; }
+
+  return tryPlain();
+}
+
+function highlightDiffInd(line, matches) {
+  var highlighted = colorize.brightBlue(matches[1])
+    , code = matches[2];
+  return code ? highlighted + tryHighlight(code) : highlighted;
+}
+
+function colorizeAddRemove(c) {
+  return addRemRegex.test(c) ? colorize.yellow(c) : c;
 }
 
 function highlightDiff(line) {
-  var matches = diffIndRegex.exec(line)
-    , highlightedDiffInd = colorize.brightBlue(matches[1])
-    , code = matches[2];
+  var diffIndMatches = diffIndRegex.exec(line);
 
-  return code ? highlightedDiffInd + tryHighlight(code) : highlightedDiffInd;
+  return diffIndMatches 
+    ? highlightDiffInd(line, diffIndMatches)
+    : colorizeAddRemove(line[0]) + tryHighlight(line.slice(1));
 }
 
 console.log(
   highlightDiff('@@ -25,22 +31,47 @@ function resolveTheme (config) { }')
 )
 
-var highlightedLines = lines
-  .map(function (line) {
-    var code = diff ? line.slice(1) : code
-      , highlighted;
-    try {
-      highlighted = highlight(code);
-    } catch (e) {
-      highlighted = code;
-    }
-    return diff ? colorize.yellow(line[0]) + highlighted : highlighted;
-  });
+var highlighter = diff ? highlightDiff : tryHighlight;
+var highlightedLines = lines.map(highlighter);
 
-//console.log(highlightedLines.join('\n'));
+console.log(highlightedLines.join('\n'));
 
