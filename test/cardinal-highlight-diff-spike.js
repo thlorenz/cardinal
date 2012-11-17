@@ -1,12 +1,13 @@
 /*jshint asi:true */
 'use strict';
 
-var fs = require('fs')
-  , path = require('path')
-  , highlight = require('..').highlight
-  , colorize = require('../colorize')
-  , diffFile = path.join(__dirname, 'fixtures', 'git-diff.txt') 
-  , diff = fs.readFileSync(diffFile, 'utf-8')
+var fs          =  require('fs')
+  , path        =  require('path')
+  , utl         =  require('../utl')
+  , highlighter =  require('..')
+  , colorize    =  require('../colorize')
+  , diffFile    =  path.join(__dirname, 'fixtures', 'git-diff.txt')
+  , diff        =  fs.readFileSync(diffFile, 'utf-8')
 
 
 // @@ is not a valid js token, so when we see it, we can be sure that we are dealing with a git or svn diff
@@ -28,9 +29,10 @@ function tryHighlight(code) {
 
   function tryAppending(appended, tryNext) {
     var success;
+    var removeAfter = new RegExp('\\[\\d+m' + appended + '.+\\[\\d+m$');
     try {
-       success = highlight(code + appended);
-       return success;
+       success = highlighter.highlight(code + appended);
+       return success.replace(removeAfter, '');
     } catch (e) {
       return tryNext(code);
     }
@@ -39,20 +41,26 @@ function tryHighlight(code) {
   function tryRemoveLeadingComma(tryNext) {
     var success;
     try {
-       success = highlight(code.replace(/^( +),(.+)$/, '$1 $2'));
+       success = highlighter.highlight(code.replace(/^( +),(.+)$/, '$1 $2'));
        return success;
     } catch (e) {
       return tryNext(code);
     }
   }
 
-  function tryPlain() { return tryAppending('', tryCloseMustache); }
+  function tryPlain() { 
+    try {
+      return highlighter.highlight(code);
+    } catch (e) {
+      return tryCloseMustache();
+    }
+  }
 
   function tryCloseMustache() { return tryAppending('}', tryCloseParen); }
 
-  function tryCloseParen() { return tryAppending(')', tryCloseMustacheParen); }
+  function tryCloseParen() { return tryAppending('\\)', tryRemovingCommas); }
 
-  function tryCloseMustacheParen() { return tryAppending('})', tryRemovingCommas);}
+  //function tryCloseMustacheParen() { return tryAppending('})', tryRemovingCommas);}
 
   function tryRemovingCommas() { return tryRemoveLeadingComma(giveUp); }
 
@@ -79,12 +87,8 @@ function highlightDiff(line) {
     : colorizeAddRemove(line[0]) + tryHighlight(line.slice(1));
 }
 
-console.log(
-  highlightDiff('@@ -25,22 +31,47 @@ function resolveTheme (config) { }')
-)
-
-var highlighter = diff ? highlightDiff : tryHighlight;
-var highlightedLines = lines.map(highlighter);
+var highlightFn = diff ? highlightDiff : tryHighlight;
+var highlightedLines = lines.map(highlightFn);
 
 console.log(highlightedLines.join('\n'));
 
