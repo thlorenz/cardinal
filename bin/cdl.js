@@ -58,8 +58,8 @@ var stdin = process.stdin
 // line numbers don't make sense when we are printing line by line
 opts.linenos = false;
 
-stdin.resume();
 stdin.setEncoding('utf-8');
+stdin.resume();
 stdin
   .on('data', function (chunk) {
     chunk.split('\n').forEach(function (line) {
