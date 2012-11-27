@@ -25,14 +25,15 @@ function isDiff(lines) {
 }
 
 var diff = isDiff(lines);
+
 function tryHighlight(code) {
 
+  // TODO: need to remove symbols added to get valid code
+  //       this should be done by getting the splits instead of the actual code from the highlighter
+  //       now we can remove first / last one after highlighting completed
   function tryAppending(appended, tryNext) {
-    var success;
-    var removeAfter = new RegExp('\\[\\d+m' + appended + '.+\\[\\d+m$');
     try {
-       success = highlighter.highlight(code + appended);
-       return success.replace(removeAfter, '');
+       return highlighter.highlight(code + appended);
     } catch (e) {
       return tryNext(code);
     }
@@ -58,9 +59,9 @@ function tryHighlight(code) {
 
   function tryCloseMustache() { return tryAppending('}', tryCloseParen); }
 
-  function tryCloseParen() { return tryAppending('\\)', tryRemovingCommas); }
+  function tryCloseParen() { return tryAppending('\\)', tryCloseMustacheParen); }
 
-  //function tryCloseMustacheParen() { return tryAppending('})', tryRemovingCommas);}
+  function tryCloseMustacheParen() { return tryAppending('})', tryRemovingCommas);}
 
   function tryRemovingCommas() { return tryRemoveLeadingComma(giveUp); }
 
