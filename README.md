@@ -110,6 +110,7 @@ opts is an {Object} with the following properties:
 - `theme` {Object} is used to optionally override the theme used to highlight
 - `linenos` {Boolean} if `true` line numbers are included in the highlighted code
 - `firstline` {Integer} sets line number of the first line when line numbers are printed
+- `json` {Boolean} if `true` highlights JSON in addition to JavaScript
 
 ## Examples ([*browse*](https://github.com/thlorenz/cardinal/tree/master/examples))
 
