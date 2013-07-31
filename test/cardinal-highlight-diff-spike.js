@@ -5,7 +5,7 @@ var fs          =  require('fs')
   , path        =  require('path')
   , utl         =  require('../utl')
   , highlighter =  require('..')
-  , colorize    =  require('../colorize')
+  , colors      =  require('ansicolors')
   , diffFile    =  path.join(__dirname, 'fixtures', 'git-diff.txt')
   , diff        =  fs.readFileSync(diffFile, 'utf-8')
 
@@ -71,13 +71,13 @@ function tryHighlight(code) {
 }
 
 function highlightDiffInd(line, matches) {
-  var highlighted = colorize.brightBlue(matches[1])
+  var highlighted = colors.brightBlue(matches[1])
     , code = matches[2];
   return code ? highlighted + tryHighlight(code) : highlighted;
 }
 
-function colorizeAddRemove(c) {
-  return addRemRegex.test(c) ? colorize.yellow(c) : c;
+function colorsAddRemove(c) {
+  return addRemRegex.test(c) ? colors.yellow(c) : c;
 }
 
 function highlightDiff(line) {
@@ -85,7 +85,7 @@ function highlightDiff(line) {
 
   return diffIndMatches 
     ? highlightDiffInd(line, diffIndMatches)
-    : colorizeAddRemove(line[0]) + tryHighlight(line.slice(1));
+    : colorsAddRemove(line[0]) + tryHighlight(line.slice(1));
 }
 
 var highlightFn = diff ? highlightDiff : tryHighlight;
