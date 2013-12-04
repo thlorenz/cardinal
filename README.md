@@ -124,3 +124,7 @@ opts is an {Object} with the following properties:
   ***highlightFileSync()***
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thlorenz/cardinal/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
