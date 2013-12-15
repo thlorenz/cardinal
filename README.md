@@ -1,5 +1,7 @@
 # cardinal [![Build Status](https://secure.travis-ci.org/thlorenz/cardinal.png)](http://travis-ci.org/thlorenz/cardinal)
 
+[![NPM](https://nodei.co/npm/cardinal.png?downloads=true&stars=true)](https://nodei.co/npm/cardinal/)
+
 **car·di·nal** *(kärdn-l, kärdnl)* - crested thick-billed North American finch having bright red plumage in the male.
 
 ![screenshot](https://github.com/thlorenz/cardinal/raw/master/assets/screen-shot.png)
