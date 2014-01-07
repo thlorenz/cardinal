@@ -21,3 +21,11 @@ To add your theme to the cardinal built-in themes, follow the below steps:
 If you believe that your theme is better than the current default theme, let me know by creating an issue. 
 
 This will allow others to cast their vote. If enough people agree, your theme will be promoted to be the default.
+
+## Contributed Themes
+
+### tomorrow night
+
+[![tomorrow-night](https://github.com/thlorenz/cardinal/raw/master/assets/theme-tomorrow-night.png)](https://github.com/thlorenz/cardinal/blob/master/themes/tomorrow-night.js)
+
+*by [firede](https://github.com/firede)*
