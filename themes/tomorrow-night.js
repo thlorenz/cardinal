@@ -57,6 +57,8 @@ module.exports = {
 
     , 'case'        :  colors.magenta
     , 'catch'       :  colors.magenta
+    , 'class'       :  undefined
+    , 'const'       :  undefined
     , 'continue'    :  colors.magenta
 
     , 'debugger'    :  colors.magenta
@@ -65,17 +67,22 @@ module.exports = {
     , 'do'          :  colors.magenta
 
     , 'else'        :  colors.magenta
+    , 'export'      :  undefined
+    , 'extends'     :  undefined
 
     , 'finally'     :  colors.magenta
     , 'for'         :  colors.magenta
     , 'function'    :  colors.magenta
 
     , 'if'          :  colors.magenta
+    , 'import'      :  undefined
     , 'in'          :  colors.cyan
     , 'instanceof'  :  colors.cyan
-
+    , 'let'         :  undefined
     , 'new'         :  colors.cyan
     , 'return'      :  colors.magenta
+    , 'static'      :  undefined
+    , 'super'       :  undefined
     , 'switch'      :  colors.magenta
 
     , 'this'        :  colors.red
@@ -88,6 +95,7 @@ module.exports = {
 
     , 'while'       :  colors.magenta
     , 'with'        :  colors.cyan
+    , 'yield'       :  undefined
     , _default      :  colors.white
   }
   , 'Punctuator': {
@@ -135,12 +143,14 @@ module.exports = {
     , '|=': undefined
     , '^=': undefined
     , '/=': undefined
+    , '=>': undefined
 
     , '===': undefined
     , '!==': undefined
     , '>>>': undefined
     , '<<=': undefined
     , '>>=': undefined
+    , '...': undefined
     
     , '>>>=': undefined
 

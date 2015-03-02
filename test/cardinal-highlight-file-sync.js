@@ -42,7 +42,7 @@ test('non existing file', function (t) {
   try {
     cardinal.highlightFileSync('./not/existing');
   } catch (e) {
-    t.similar(e.message, /ENOENT, .*not.existing/)
+    t.similar(e.message, /ENOENT. .*not.existing/)
     t.end()
   }
 })

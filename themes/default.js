@@ -43,6 +43,8 @@ module.exports = {
 
     , 'case'        :  undefined
     , 'catch'       :  colors.cyan
+    , 'class'       :  undefined
+    , 'const'       :  undefined
     , 'continue'    :  undefined
 
     , 'debugger'    :  undefined
@@ -51,17 +53,22 @@ module.exports = {
     , 'do'          :  undefined
 
     , 'else'        :  undefined
+    , 'export'      :  undefined
+    , 'extends'     :  undefined
 
     , 'finally'     :  colors.cyan
     , 'for'         :  undefined
     , 'function'    :  undefined
 
     , 'if'          :  undefined
+    , 'import'      :  undefined
     , 'in'          :  undefined
     , 'instanceof'  :  undefined
-
+    , 'let'         :  undefined
     , 'new'         :  colors.red
     , 'return'      :  colors.red
+    , 'static'      :  undefined
+    , 'super'       :  undefined
     , 'switch'      :  undefined
 
     , 'this'        :  colors.brightRed
@@ -74,6 +81,7 @@ module.exports = {
 
     , 'while'       :  undefined
     , 'with'        :  undefined
+    , 'yield'       :  undefined
     , _default      :  colors.brightBlue
   }
   , 'Punctuator': {
@@ -121,12 +129,14 @@ module.exports = {
     , '|=': undefined
     , '^=': undefined
     , '/=': undefined
+    , '=>': undefined
 
     , '===': undefined
     , '!==': undefined
     , '>>>': undefined
     , '<<=': undefined
     , '>>=': undefined
+    , '...': undefined
     
     , '>>>=': undefined
 
