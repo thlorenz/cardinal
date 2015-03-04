@@ -1,6 +1,6 @@
 {
   "name": "cardinal",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Syntax highlights JavaScript code with ANSI colors to be printed to the terminal.",
   "main": "cardinal.js",
   "scripts": {
