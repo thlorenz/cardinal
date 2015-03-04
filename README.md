@@ -124,9 +124,3 @@ opts is an {Object} with the following properties:
 - [file that highlights itself hiding all
   semicolons](https://github.com/thlorenz/cardinal/blob/master/examples/highlight-self-hide-semicolons.js) via
   ***highlightFileSync()***
-
-
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thlorenz/cardinal/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
