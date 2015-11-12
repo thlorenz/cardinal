@@ -46,7 +46,7 @@ module.exports = {
         var nextToken = info.tokens[info.tokenIndex + 1];
 
         // show keys of object literals and json in different color
-        return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':') 
+        return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':')
           ? colors.green(s)
           : colors.brightGreen(s);
       }
@@ -67,6 +67,7 @@ module.exports = {
     , 'do'          :  colors.magenta
 
     , 'else'        :  colors.magenta
+    , 'enum'        :  undefined
     , 'export'      :  undefined
     , 'extends'     :  undefined
 
@@ -75,11 +76,16 @@ module.exports = {
     , 'function'    :  colors.magenta
 
     , 'if'          :  colors.magenta
+    , 'implements'  :  undefined
     , 'import'      :  undefined
     , 'in'          :  colors.cyan
     , 'instanceof'  :  colors.cyan
     , 'let'         :  undefined
     , 'new'         :  colors.cyan
+    , 'package'     :  undefined
+    , 'private'     :  undefined
+    , 'protected'   :  undefined
+    , 'public'      :  undefined
     , 'return'      :  colors.magenta
     , 'static'      :  undefined
     , 'super'       :  undefined
@@ -151,7 +157,7 @@ module.exports = {
     , '<<=': undefined
     , '>>=': undefined
     , '...': undefined
-    
+
     , '>>>=': undefined
 
     , _default: colors.cyan

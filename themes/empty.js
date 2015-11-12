@@ -1,4 +1,4 @@
-/* 
+/*
  * Copy this file and use it as a starting point for your custom cardinal color theme.
  * Just fill in or change the entries for the tokens you want to color
  * Keep in mind that more specific configurations override less specific ones.
@@ -31,7 +31,7 @@ module.exports = {
       _default: undefined
     }
 
-  , 'Keyword': {
+ , 'Keyword': {
       'break'       :  undefined
 
     , 'case'        :  undefined
@@ -46,6 +46,7 @@ module.exports = {
     , 'do'          :  undefined
 
     , 'else'        :  undefined
+    , 'enum'        :  undefined
     , 'export'      :  undefined
     , 'extends'     :  undefined
 
@@ -54,11 +55,19 @@ module.exports = {
     , 'function'    :  undefined
 
     , 'if'          :  undefined
+    , 'implements'  :  undefined
     , 'import'      :  undefined
     , 'in'          :  undefined
     , 'instanceof'  :  undefined
+    , 'interface'   :  undefined
     , 'let'         :  undefined
     , 'new'         :  undefined
+
+    , 'package'     :  undefined
+    , 'private'     :  undefined
+    , 'protected'   :  undefined
+    , 'public'      :  undefined
+
     , 'return'      :  undefined
     , 'static'      :  undefined
     , 'super'       :  undefined
@@ -78,14 +87,14 @@ module.exports = {
     , _default      :  undefined
   }
   , 'Punctuator': {
-      ';': undefined  
-    , '.': undefined  
-    , ',': undefined  
+      ';': undefined
+    , '.': undefined
+    , ',': undefined
 
-    , '{': undefined  
-    , '}': undefined  
-    , '(': undefined  
-    , ')': undefined  
+    , '{': undefined
+    , '}': undefined
+    , '(': undefined
+    , ')': undefined
     , '[': undefined
     , ']': undefined
 
@@ -130,7 +139,7 @@ module.exports = {
     , '<<=': undefined
     , '>>=': undefined
     , '...': undefined
-    
+
     , '>>>=': undefined
 
     , _default: undefined

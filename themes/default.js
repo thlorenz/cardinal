@@ -32,7 +32,7 @@ module.exports = {
         var nextToken = info.tokens[info.tokenIndex + 1];
 
         // show keys of object literals and json in different color
-        return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':') 
+        return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':')
           ? colors.green(s)
           : colors.brightGreen(s);
       }
@@ -53,6 +53,7 @@ module.exports = {
     , 'do'          :  undefined
 
     , 'else'        :  undefined
+    , 'enum'        :  undefined
     , 'export'      :  undefined
     , 'extends'     :  undefined
 
@@ -61,11 +62,16 @@ module.exports = {
     , 'function'    :  undefined
 
     , 'if'          :  undefined
+    , 'implements'  :  undefined
     , 'import'      :  undefined
     , 'in'          :  undefined
     , 'instanceof'  :  undefined
     , 'let'         :  undefined
     , 'new'         :  colors.red
+    , 'package'     :  undefined
+    , 'private'     :  undefined
+    , 'protected'   :  undefined
+    , 'public'      :  undefined
     , 'return'      :  colors.red
     , 'static'      :  undefined
     , 'super'       :  undefined
@@ -86,13 +92,13 @@ module.exports = {
   }
   , 'Punctuator': {
       ';': colors.brightBlack
-    , '.': colors.green  
-    , ',': colors.green  
+    , '.': colors.green
+    , ',': colors.green
 
     , '{': colors.yellow
     , '}': colors.yellow
-    , '(': colors.brightBlack  
-    , ')': colors.brightBlack  
+    , '(': colors.brightBlack
+    , ')': colors.brightBlack
     , '[': colors.yellow
     , ']': colors.yellow
 
@@ -137,7 +143,7 @@ module.exports = {
     , '<<=': undefined
     , '>>=': undefined
     , '...': undefined
-    
+
     , '>>>=': undefined
 
     , _default: colors.brightYellow
