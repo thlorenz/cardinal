@@ -12,7 +12,7 @@ function highlight () {
   // For asynchronous highlighting use: highlightFile() - see highlight-self.js
   
   try {
-    var highlighted = cardinal.highlightFileSync(__filename, hideSemicolonsTheme);
+    var highlighted = cardinal.highlightFileSync(__filename, {theme: hideSemicolonsTheme});
     console.log(highlighted);
   } catch (err) {
     console.error(err);
