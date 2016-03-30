@@ -99,12 +99,12 @@ module.exports = {
     , '.': colors.green
     , ',': colors.green
 
-    , '{': colors.yellow
-    , '}': colors.yellow
+    , '{': colors.brightWhite
+    , '}': colors.brightWhite
     , '(': colors.brightBlack
     , ')': colors.brightBlack
-    , '[': colors.yellow
-    , ']': colors.yellow
+    , '[': colors.brightWhite
+    , ']': colors.brightWhite
 
     , '<': undefined
     , '>': undefined
