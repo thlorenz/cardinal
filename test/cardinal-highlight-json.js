@@ -32,10 +32,8 @@ test('not supplying custom theme', function (t) {
 });
 
 test('without json option', function (t) {
-  try {
-    cardinal.highlight(json);
-  } catch (e) {
-    t.similar(e.message, /Unable to perform highlight. The code contained syntax errors.* Line 1: Unexpected token /)
-    t.end();
-  }
+  var highlighted = cardinal.highlight(json);
+
+  t.equals(highlighted, '\u001b[33m{\u001b[39m\u001b[32m"foo"\u001b[39m\u001b[93m:\u001b[39m\u001b[92m"bar"\u001b[39m\u001b[32m,\u001b[39m\u001b[32m"baz"\u001b[39m\u001b[93m:\u001b[39m\u001b[92m"quux"\u001b[39m\u001b[32m,\u001b[39m\u001b[32m"bam"\u001b[39m\u001b[93m:\u001b[39m\u001b[90mnull\u001b[39m\u001b[33m}\u001b[39m')
+  t.end();
 });
