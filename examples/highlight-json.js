@@ -7,4 +7,4 @@ var json = JSON.stringify({
   baz: 'quux'
 });
 
-console.log(cardinal.highlight(json, {json: true}));
+console.log(cardinal.highlight(json));
