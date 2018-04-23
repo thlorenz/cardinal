@@ -13,20 +13,17 @@ var test     =  require('tap').test
 
 
 test('tap', function (t) {
-  var invalidTapFiles = [
-      'async-map-ordered.js'
-    , 'prof.js'
-  ]
-
   readdirp({ root: tapdir, fileFilter: '*.js' })
     .on('data', function (entry) {
       
-      if (~invalidTapFiles.indexOf(entry.name)) return
-
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
         , result = cardinal.highlight(code);
 
-      t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var ')), 'highlighted ' + entry.path)
+      if (!(/^[^/*]*var /.test(code))) {
+        t.pass('skipping ' + entry.path + ' due to missing var statement')
+      } else {
+        t.assert(~result.indexOf('[32mvar\u001b[39m'), 'highlighted ' + entry.path)
+      }
     })
     .on('end', t.end.bind(t))
 })
