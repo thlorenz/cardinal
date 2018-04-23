@@ -28,11 +28,11 @@
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
   "license": "MIT",
   "dependencies": {
-    "ansicolors": "~0.2.1",
-    "redeyed": "~1.0.0"
+    "ansicolors": "~0.3.2",
+    "redeyed": "~1.0.1"
   },
   "devDependencies": {
-    "tap": "~0.3.1",
-    "readdirp": "~0.2.1"
+    "readdirp": "~2.1.0",
+    "tap": "~11.1.4"
   }
 }
