@@ -1,7 +1,7 @@
 'use strict'
 /* jshint asi: true */
 
-var test                =  require('tap').test
+var test                =  require('tape')
 var path                =  require('path')
 var fs                  =  require('fs')
 var hideSemicolonsTheme =  require('../themes/hide-semicolons')

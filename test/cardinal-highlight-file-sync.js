@@ -2,7 +2,7 @@
 
 /* eslint-disable no-path-concat */
 
-var test = require('tap').test
+var test = require('tape')
 var path = require('path')
 var customTheme = require('./fixtures/custom')
 var cardinal = require('..')
@@ -34,7 +34,7 @@ test('non existing file', function(t) {
   try {
     cardinal.highlightFileSync('./not/existing')
   } catch (e) {
-    t.similar(e.message, /ENOENT. .*not.existing/)
+    t.ok((/ENOENT. .*not.existing/).test(e.message))
     t.end()
   }
 })

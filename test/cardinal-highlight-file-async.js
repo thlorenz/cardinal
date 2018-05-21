@@ -2,7 +2,7 @@
 
 /* eslint-disable no-path-concat */
 
-var test = require('tap').test
+var test = require('tape')
 var path = require('path')
 var customTheme = require('./fixtures/custom')
 var cardinal = require('..')
@@ -36,7 +36,7 @@ test('syntactically invalid code', function(t) {
 
 test('non existing file', function(t) {
   cardinal.highlightFile('./not/existing', function(err, highlighted) {
-    t.similar(err.message, /ENOENT. .*not.existing/)
+    t.ok((/ENOENT. .*not.existing/).test(err.message))
     t.end()
   })
 })

@@ -1,17 +1,17 @@
 'use strict'
 
 // applying esprima to a bunch of files of contained libraries as a smoke test
-var test     =  require('tap').test
+var test     =  require('tape')
 var path     =  require('path')
 var fs       =  require('fs')
 var readdirp =  require('readdirp')
 var cardinal  =  require('..')
 var nodeModules =  path.join(__dirname, '..', 'node_modules')
-var tapdir       =  path.join(nodeModules, 'tap')
+var tapedir       =  path.join(nodeModules, 'tape')
 var redeyeddir   =  path.join(nodeModules, 'redeyed')
 
-test('tap', function(t) {
-  readdirp({ root: tapdir, fileFilter: '*.js' })
+test('tape', function(t) {
+  readdirp({ root: tapedir, fileFilter: '*.js' })
     .on('data', function(entry) {
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
       var result = cardinal.highlight(code)

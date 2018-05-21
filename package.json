@@ -5,10 +5,9 @@
   "main": "cardinal.js",
   "scripts": {
     "test": "npm run run-test && npm run lint",
-    "rrun-test": "tape test/*.js",
+    "run-test": "tape test/*.js",
     "lint": "standart",
     "lint-fix": "standart --fix",
-    "run-test": "tap ./test/*.js",
     "demo": "node examples/highlight-string.js; node examples/highlight-self; node examples/highlight-self-hide-semicolons;"
   },
   "bin": {
@@ -38,7 +37,7 @@
   "devDependencies": {
     "readdirp": "~2.1.0",
     "standart": "~6.1.0",
-    "tap": "~11.1.4"
+    "tape": "~4.9.0"
   },
   "standart": {
     "ignore": [

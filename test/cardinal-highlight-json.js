@@ -1,6 +1,6 @@
 'use strict'
 
-var test = require('tap').test
+var test = require('tape')
 var customTheme = require('./fixtures/custom')
 var cardinal = require('..')
 
