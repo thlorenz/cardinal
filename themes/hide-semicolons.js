@@ -1,4 +1,4 @@
-var colors = require('ansicolors');
+var colors = require('ansicolors')
 
 // Change the below definitions in order to tweak the color theme.
 module.exports = {
@@ -28,13 +28,13 @@ module.exports = {
     }
 
   , 'String': {
-      _default: function (s, info) {
-        var nextToken = info.tokens[info.tokenIndex + 1];
+      _default: function(s, info) {
+        var nextToken = info.tokens[info.tokenIndex + 1]
 
         // show keys of object literals and json in different color
         return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':')
           ? colors.green(s)
-          : colors.brightGreen(s);
+          : colors.brightGreen(s)
       }
     }
 
@@ -199,4 +199,4 @@ module.exports = {
       _default: colors.brightGreen
     }
   , _default: undefined
-};
+}

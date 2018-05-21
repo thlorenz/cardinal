@@ -1,4 +1,4 @@
-var colors = require('ansicolors');
+var colors = require('ansicolors')
 
 // Change the below definitions in order to tweak the color theme.
 module.exports = {
@@ -19,9 +19,9 @@ module.exports = {
     , 'warn'      :  colors.blue
     , 'error'     :  colors.blue
     , 'join'      :  colors.blue
-    , _default    :  function (s, info) {
-        var prevToken = info.tokens[info.tokenIndex - 1];
-        var nextToken = info.tokens[info.tokenIndex + 1];
+    , _default    :  function(s, info) {
+        var prevToken = info.tokens[info.tokenIndex - 1]
+        var nextToken = info.tokens[info.tokenIndex + 1]
 
         return (nextToken
             && nextToken.type === 'Punctuator'
@@ -29,7 +29,7 @@ module.exports = {
             && prevToken
             && prevToken.type === 'Keyword'
             && prevToken.value === 'function'
-          ) ? colors.blue(s) : colors.white(s);
+          ) ? colors.blue(s) : colors.white(s)
       }
     }
 
@@ -42,13 +42,13 @@ module.exports = {
     }
 
   , 'String': {
-      _default: function (s, info) {
-        var nextToken = info.tokens[info.tokenIndex + 1];
+      _default: function(s, info) {
+        var nextToken = info.tokens[info.tokenIndex + 1]
 
         // show keys of object literals and json in different color
         return (nextToken && nextToken.type === 'Punctuator' && nextToken.value === ':')
           ? colors.green(s)
-          : colors.brightGreen(s);
+          : colors.brightGreen(s)
       }
     }
 
@@ -212,4 +212,4 @@ module.exports = {
     }
 
   , _default: undefined
-};
+}

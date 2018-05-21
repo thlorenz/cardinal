@@ -4,7 +4,8 @@
  * Keep in mind that more specific configurations override less specific ones.
  */
 
-var colors = require('ansicolors');
+// eslint-disable-next-line no-unused-vars
+var colors = require('ansicolors')
 
 // Change the below definitions in order to tweak the color theme.
 module.exports = {
@@ -195,4 +196,4 @@ module.exports = {
     }
 
   , _default: undefined
-};
+}

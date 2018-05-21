@@ -1,23 +1,20 @@
-'use strict';
-/*jshint asi: true*/
+'use strict'
 
 // applying esprima to a bunch of files of contained libraries as a smoke test
 var test     =  require('tap').test
-  , path     =  require('path')
-  , fs       =  require('fs')
-  , readdirp =  require('readdirp')
-  , cardinal  =  require('..')
-  , node_modules =  path.join(__dirname, '..', 'node_modules')
-  , tapdir       =  path.join(node_modules, 'tap')
-  , redeyeddir   =  path.join(node_modules, 'redeyed')
+var path     =  require('path')
+var fs       =  require('fs')
+var readdirp =  require('readdirp')
+var cardinal  =  require('..')
+var nodeModules =  path.join(__dirname, '..', 'node_modules')
+var tapdir       =  path.join(nodeModules, 'tap')
+var redeyeddir   =  path.join(nodeModules, 'redeyed')
 
-
-test('tap', function (t) {
+test('tap', function(t) {
   readdirp({ root: tapdir, fileFilter: '*.js' })
-    .on('data', function (entry) {
-      
+    .on('data', function(entry) {
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
-        , result = cardinal.highlight(code);
+      var result = cardinal.highlight(code)
 
       if (!(/^[^/*]*var /.test(code))) {
         t.pass('skipping ' + entry.path + ' due to missing var statement')
@@ -28,12 +25,11 @@ test('tap', function (t) {
     .on('end', t.end.bind(t))
 })
 
-test('redeyed', function (t) {
+test('redeyed', function(t) {
   readdirp({ root: redeyeddir, fileFilter: 'redeyed.js' })
-    .on('data', function (entry) {
-      
+    .on('data', function(entry) {
       var code = fs.readFileSync(entry.fullPath, 'utf-8')
-        , result = cardinal.highlight(code);
+      var result = cardinal.highlight(code)
 
       t.assert(~result.indexOf('[32mvar\u001b[39m') || !(~result.indexOf('var ')), 'highlighted ' + entry.path)
     })
