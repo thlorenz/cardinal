@@ -1,4 +1,4 @@
-# cardinal [![Build Status](https://secure.travis-ci.org/thlorenz/cardinal.png)](http://travis-ci.org/thlorenz/cardinal)
+# cardinal [![Build Status](https://secure.travis-ci.org/thlorenz/cardinal.svg)](http://travis-ci.org/thlorenz/cardinal)
 
 <a href="https://www.patreon.com/bePatron?u=8663953"><img alt="become a patron" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" height="35px"></a>
 
@@ -46,7 +46,7 @@
 
     [sudo] npm install -g cardinal
 
-**Note:** 
+**Note:**
 
 When installed globally, cardinal exposes itself as the `cdl` command.
 
