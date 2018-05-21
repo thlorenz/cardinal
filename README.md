@@ -114,6 +114,8 @@ opts is an {Object} with the following properties:
 - `theme` {Object} is used to optionally override the theme used to highlight
 - `linenos` {Boolean} if `true` line numbers are included in the highlighted code
 - `firstline` {Integer} sets line number of the first line when line numbers are printed
+- `jsx` {Boolean} if `true` _JSX_ syntax is supported, otherwise cardinal will raise an error
+    when encountering _JSX_ (default: `false`)
 
 **Note** The `json` option is obsoleted and not necessary anymore as cardinal properly understands both JSON and JavaScript.
 

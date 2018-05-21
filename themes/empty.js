@@ -149,12 +149,49 @@ module.exports = {
 
     // line comment
   , Line: {
-     _default: undefined
+      _default: undefined
     }
 
     /* block comment */
   , Block: {
-     _default: undefined
+      _default: undefined
+    }
+
+  // JSX
+  , JSXAttribute: {
+      _default: undefined
+    }
+  , JSXClosingElement: {
+      _default: undefined
+    }
+  , JSXElement: {
+      _default: undefined
+    }
+  , JSXEmptyExpression: {
+      _default: undefined
+    }
+  , JSXExpressionContainer: {
+      _default: undefined
+    }
+  , JSXIdentifier: {
+      // many more identifies are possible, div, table, etc.
+        className: undefined
+      , _default: undefined
+    }
+  , JSXMemberExpression: {
+      _default: undefined
+    }
+  , JSXNamespacedName: {
+      _default: undefined
+    }
+  , JSXOpeningElement: {
+      _default: undefined
+    }
+  , JSXSpreadAttribute: {
+      _default: undefined
+    }
+  , JSXText: {
+      _default: undefined
     }
 
   , _default: undefined

@@ -10,6 +10,7 @@ var cardinal = require('..')
 
 opts = opts || {};
 opts.theme = theme;
+opts.jsx = true
 
 function usage() {
   var msg = [ 

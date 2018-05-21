@@ -6,7 +6,7 @@ var fs          =  require('fs')
   , utl         =  require('../utl')
   , highlighter =  require('..')
   , colors      =  require('ansicolors')
-  , diffFile    =  path.join(__dirname, 'fixtures', 'git-diff.txt')
+  , diffFile    =  path.join(__dirname, 'git-diff.txt')
   , diff        =  fs.readFileSync(diffFile, 'utf-8')
 
 

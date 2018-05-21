@@ -4,7 +4,7 @@
 var test = require('tap').test
   , util = require('util')
   , fs = require('fs')
-  , customTheme = require('./fixtures/custom') 
+  , customTheme = require('./fixtures/custom')
   , cardinal = require('..')
 
 function inspect (obj) {
@@ -48,21 +48,21 @@ test('line numbers firstline 99', function (t) {
 })
 
 test('line numbers multi line no first line given', function (t) {
-  var multilineCode = '' + 
-    function foo () {
-      return 1;
-    };
+  var multilineCode = '' +
+function foo() {
+  return 1
+}
   var highlighted = cardinal.highlight(multilineCode, { linenos: true });
-  t.equals(highlighted,'\u001b[90m1: \u001b[94mfunction\u001b[39m \u001b[37mfoo\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m \u001b[33m{\u001b[39m\n\u001b[90m2:       \u001b[31mreturn\u001b[39m \u001b[34m1\u001b[39m\u001b[90m;\u001b[39m\n\u001b[90m3:     \u001b[33m}\u001b[39m')
+  t.equals(highlighted, '\u001b[90m1: \u001b[94mfunction\u001b[39m \u001b[37mfoo\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m \u001b[33m{\u001b[39m\n\u001b[90m2:   \u001b[31mreturn\u001b[39m \u001b[34m1\u001b[39m\n\u001b[90m3: \u001b[33m}\u001b[39m')
   t.end()
 })
 
 test('line numbers multi line first line 99', function (t) {
-  var multilineCode = '' + 
-    function foo () {
-      return 1;
-    };
+  var multilineCode = '' +
+function foo() {
+  return 1
+}
   var highlighted = cardinal.highlight(multilineCode, { linenos: true, firstline: 99 });
-  t.equals(highlighted,'\u001b[90m 99: \u001b[94mfunction\u001b[39m \u001b[37mfoo\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m \u001b[33m{\u001b[39m\n\u001b[90m100:       \u001b[31mreturn\u001b[39m \u001b[34m1\u001b[39m\u001b[90m;\u001b[39m\n\u001b[90m101:     \u001b[33m}\u001b[39m')
+  t.equals(highlighted, '\u001b[90m 99: \u001b[94mfunction\u001b[39m \u001b[37mfoo\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m \u001b[33m{\u001b[39m\n\u001b[90m100:   \u001b[31mreturn\u001b[39m \u001b[34m1\u001b[39m\n\u001b[90m101: \u001b[33m}\u001b[39m')
   t.end()
 })

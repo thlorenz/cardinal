@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "ansicolors": "~0.3.2",
-    "redeyed": "~2.0.0"
+    "redeyed": "~2.1.0"
   },
   "devDependencies": {
     "readdirp": "~2.1.0",

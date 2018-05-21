@@ -153,12 +153,48 @@ module.exports = {
 
     // line comment
   , Line: {
-     _default: colors.brightBlack
+      _default: colors.brightBlack
     }
 
     /* block comment */
   , Block: {
-     _default: colors.brightBlack
+      _default: colors.brightBlack
+    }
+
+  // JSX
+  , JSXAttribute: {
+      _default: colors.magenta
+    }
+  , JSXClosingElement: {
+      _default: colors.magenta
+    }
+  , JSXElement: {
+      _default: colors.magenta
+    }
+  , JSXEmptyExpression: {
+      _default: colors.magenta
+    }
+  , JSXExpressionContainer: {
+      _default: colors.magenta
+    }
+  , JSXIdentifier: {
+        className: colors.blue
+      , _default: colors.magenta
+    }
+  , JSXMemberExpression: {
+      _default: colors.magenta
+    }
+  , JSXNamespacedName: {
+      _default: colors.magenta
+    }
+  , JSXOpeningElement: {
+      _default: colors.magenta
+    }
+  , JSXSpreadAttribute: {
+      _default: colors.magenta
+    }
+  , JSXText: {
+      _default: colors.brightGreen
     }
 
   , _default: undefined
