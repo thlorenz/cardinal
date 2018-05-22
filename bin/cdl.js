@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 var cardinal = require('..')
+var path = require('path')
 var settings = require('../settings')
 var args = process.argv
 var theme = settings.resolveTheme()
@@ -8,7 +9,8 @@ var highlighted
 
 opts = opts || {}
 opts.theme = theme
-opts.jsx = true
+// jsx is only turned on when highlighting non-json files
+opts.jsx = false
 
 function usage() {
   var msg = [
@@ -25,6 +27,9 @@ function usage() {
 
 function highlightFile() {
   try {
+    // Enabling jsx for JSON breaks most likelely due to esprima AST generation
+    // not working for JSON
+    opts.jsx = path.extname(args[2]) !== '.json'
     highlighted = cardinal.highlightFileSync(args[2], opts)
     console.log(highlighted)
   } catch (e) {
